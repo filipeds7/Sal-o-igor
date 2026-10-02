@@ -165,14 +165,18 @@ button{
   display:inline-flex;
   align-items:center;
   gap:14px;
-  background:#b28a4c;
-  color:#fff;
-  border:1px solid #b28a4c;
+  background:#b28a4c !important;
+  color:#fff !important;
+  border:1px solid #b28a4c !important;
   border-radius:24px;
   padding:11px 17px;
   font-size:9px;
   font-weight:600;
-  opacity:1;
+  opacity:1 !important;
+  position:relative;
+  z-index:10;
+  filter:none !important;
+  box-shadow:none;
   transition:.2s ease
 }
 
@@ -751,8 +755,13 @@ footer{
     margin-left:auto
   }
 
+  /* MENU NO CANTO DIREITO */
   .menu-button{
-    display:block
+    display:block;
+    margin-left:auto;
+    margin-right:0;
+    position:relative;
+    z-index:25
   }
 
   .mobile-nav{
@@ -797,6 +806,18 @@ footer{
     align-items:flex-start;
     justify-content:flex-start;
     background:linear-gradient(90deg,#eee2d4 10%,#eee2d4d0 58%,transparent)
+  }
+
+  /* BOTÃO AGENDAR SOLIDO NO CELULAR */
+  .gold-btn{
+    background:#b28a4c !important;
+    color:#fff !important;
+    border:1px solid #b28a4c !important;
+    opacity:1 !important;
+    position:relative;
+    z-index:10;
+    filter:none !important;
+    box-shadow:none !important;
   }
 
   .hero-logo{
@@ -896,6 +917,13 @@ footer{
     display:none
   }
 
+  /* GARANTE O MENU NO EXTREMO DIREITO */
+  .menu-button{
+    display:block;
+    margin-left:auto;
+    margin-right:0;
+  }
+
   .hero{
     height:510px
   }
@@ -941,4 +969,4 @@ footer{
     right:15px;
     bottom:15px
   }
-  }
+}
