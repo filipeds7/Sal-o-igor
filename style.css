@@ -951,3 +951,31 @@ footer{
     bottom:15px
   }
   }
+
+/* =========================
+   CORREÇÃO BOTÃO AGENDAR - CELULAR
+========================= */
+
+.gold-btn{
+  opacity:1 !important;
+  background:#b28a4c !important;
+  color:#fff !important;
+  border:1px solid #b28a4c !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+}
+
+.gold-btn:hover,
+.gold-btn:active,
+.gold-btn:focus{
+  opacity:1 !important;
+}
+
+@media(max-width:900px){
+  .gold-btn{
+    opacity:1 !important;
+    background:#b28a4c !important;
+    color:#fff !important;
+    border-color:#b28a4c !important;
+  }
+}
