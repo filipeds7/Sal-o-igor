@@ -107,15 +107,12 @@ button{
 }
 
 .menu-button{
-.menu-button{
-  display:block;
-  margin-left:auto;
-  margin-right:0;
-  padding:0;
-  width:35px;
-  text-align:right;
-  flex-shrink:0;
-  }
+  display:none;
+  border:0;
+  background:none;
+  color:#fff;
+  font-size:25px
+}
 
 .mobile-nav{
   display:none
@@ -708,32 +705,23 @@ footer{
   position:fixed;
   right:20px;
   bottom:20px;
-  width:56px;
-  height:56px;
+  width:52px;
+  height:52px;
   border-radius:50%;
-  background:#111110;
+  background:#111;
   color:#b28a4c;
-  border:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:34px;
+  border:2px solid #b28a4c;
+  display:grid;
+  place-items:center;
+  font-size:22px;
   box-shadow:0 7px 22px #0004;
   z-index:30;
-  transition:.25s ease;
-}
-
-.whatsapp-float i{
-  color:#b28a4c;
+  transition:.2s ease
 }
 
 .whatsapp-float:hover{
   background:#b28a4c;
-  transform:scale(1.08);
-}
-
-.whatsapp-float:hover i{
-  color:#111110;
+  color:#111
 }
 
 /* =========================
@@ -954,31 +942,3 @@ footer{
     bottom:15px
   }
   }
-
-/* =========================
-   CORREÇÃO BOTÃO AGENDAR - CELULAR
-========================= */
-
-.gold-btn{
-  opacity:1 !important;
-  background:#b28a4c !important;
-  color:#fff !important;
-  border:1px solid #b28a4c !important;
-  filter:none !important;
-  mix-blend-mode:normal !important;
-}
-
-.gold-btn:hover,
-.gold-btn:active,
-.gold-btn:focus{
-  opacity:1 !important;
-}
-
-@media(max-width:900px){
-  .gold-btn{
-    opacity:1 !important;
-    background:#b28a4c !important;
-    color:#fff !important;
-    border-color:#b28a4c !important;
-  }
-}
