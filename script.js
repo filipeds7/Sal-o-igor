@@ -1,114 +1,141 @@
-// =========================
-// CARROSSEL DE RESULTADOS
-// =========================
+// ======================================================
+// CARROSSEL DE RESULTADOS REAIS
+// ======================================================
 
-const resultsTrack = document.getElementById("resultsTrack");
-const prevResults = document.getElementById("prevResults");
-const nextResults = document.getElementById("nextResults");
+const resultsTrack = document.querySelector(".results-track");
+const resultsButtons = document.querySelectorAll(".round-controls button");
 
-if (resultsTrack && prevResults && nextResults) {
 
-    prevResults.addEventListener("click", () => {
-        resultsTrack.scrollBy({
-            left: -280,
-            behavior: "smooth"
-        });
+// Botão ANTERIOR
+if (resultsTrack && resultsButtons.length >= 2) {
+
+    resultsButtons[0].addEventListener("click", function () {
+
+        const card = resultsTrack.querySelector(".result-card");
+
+        if (card) {
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = 15;
+
+            resultsTrack.scrollBy({
+                left: -(cardWidth + gap),
+                behavior: "smooth"
+            });
+        }
+
     });
 
-    nextResults.addEventListener("click", () => {
-        resultsTrack.scrollBy({
-            left: 280,
-            behavior: "smooth"
-        });
+
+    // Botão PRÓXIMO
+    resultsButtons[1].addEventListener("click", function () {
+
+        const card = resultsTrack.querySelector(".result-card");
+
+        if (card) {
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = 15;
+
+            resultsTrack.scrollBy({
+                left: cardWidth + gap,
+                behavior: "smooth"
+            });
+        }
+
     });
 
-    // Arrastar com mouse ou dedo
-    let isDragging = false;
-    let startX = 0;
-    let startScroll = 0;
-
-    resultsTrack.addEventListener("pointerdown", (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        startScroll = resultsTrack.scrollLeft;
-
-        resultsTrack.classList.add("dragging");
-        resultsTrack.setPointerCapture(e.pointerId);
-    });
-
-    resultsTrack.addEventListener("pointermove", (e) => {
-        if (!isDragging) return;
-
-        const distance = e.clientX - startX;
-
-        resultsTrack.scrollLeft = startScroll - distance;
-    });
-
-    const stopDragging = () => {
-        isDragging = false;
-        resultsTrack.classList.remove("dragging");
-    };
-
-    resultsTrack.addEventListener("pointerup", stopDragging);
-    resultsTrack.addEventListener("pointercancel", stopDragging);
 }
 
 
-// =========================
-// AVALIAÇÕES
-// =========================
+// ======================================================
+// ARRASTAR CARROSSEL COM O DEDO / MOUSE
+// ======================================================
 
-const reviewSlider = document.getElementById("reviewSlider");
+function makeDraggable(slider) {
 
-if (reviewSlider) {
+    if (!slider) return;
 
     let isDragging = false;
     let startX = 0;
     let startScroll = 0;
 
-    reviewSlider.addEventListener("pointerdown", (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        startScroll = reviewSlider.scrollLeft;
+    slider.addEventListener("pointerdown", function (e) {
 
-        reviewSlider.classList.add("dragging");
-        reviewSlider.setPointerCapture(e.pointerId);
+        isDragging = true;
+
+        startX = e.clientX;
+        startScroll = slider.scrollLeft;
+
+        slider.classList.add("dragging");
+
+        slider.setPointerCapture(e.pointerId);
+
     });
 
-    reviewSlider.addEventListener("pointermove", (e) => {
+
+    slider.addEventListener("pointermove", function (e) {
+
         if (!isDragging) return;
 
         const distance = e.clientX - startX;
 
-        reviewSlider.scrollLeft = startScroll - distance;
+        slider.scrollLeft = startScroll - distance;
+
     });
 
-    const stopReviewDragging = () => {
-        isDragging = false;
-        reviewSlider.classList.remove("dragging");
-    };
 
-    reviewSlider.addEventListener("pointerup", stopReviewDragging);
-    reviewSlider.addEventListener("pointercancel", stopReviewDragging);
+    function stopDragging() {
+
+        isDragging = false;
+
+        slider.classList.remove("dragging");
+
+    }
+
+
+    slider.addEventListener("pointerup", stopDragging);
+    slider.addEventListener("pointercancel", stopDragging);
+    slider.addEventListener("lostpointercapture", stopDragging);
+
 }
 
 
-// =========================
+// Ativa o arraste dos resultados
+makeDraggable(resultsTrack);
+
+
+// ======================================================
+// CARROSSEL DE AVALIAÇÕES
+// ======================================================
+
+const reviewSlider = document.querySelector(".review-slider");
+
+makeDraggable(reviewSlider);
+
+
+// ======================================================
 // MENU MOBILE
-// =========================
+// ======================================================
 
 const menuButton = document.querySelector(".menu-button");
 const mobileNav = document.querySelector(".mobile-nav");
 
 if (menuButton && mobileNav) {
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener("click", function () {
+
         mobileNav.classList.toggle("open");
+
     });
 
-    document.querySelectorAll(".mobile-nav a").forEach((link) => {
-        link.addEventListener("click", () => {
+
+    document.querySelectorAll(".mobile-nav a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
             mobileNav.classList.remove("open");
+
         });
+
     });
-    }
+
+}
