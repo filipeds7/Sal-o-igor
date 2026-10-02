@@ -1,34 +1,32 @@
 // Carrossel principal
-const heroImages = [
-  "assets/hero.jpg",
-  "assets/mechas.jpg",
-  "assets/penteados.jpg",
-  "assets/escova.jpg",
-  "assets/sobrancelhas.jpg"
-];
-let heroIndex = 0;
-const heroImage = document.getElementById("heroImage");
-const heroDots = document.getElementById("heroDots");
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
 
-heroImages.forEach((_, i) => {
-  const b = document.createElement("button");
-  b.className = i === 0 ? "active" : "";
-  b.setAttribute("aria-label", `Ir para foto ${i + 1}`);
-  b.addEventListener("click", () => showHero(i));
-  heroDots.appendChild(b);
-});
+let currentSlide = 0;
 
-function showHero(i) {
-  heroIndex = (i + heroImages.length) % heroImages.length;
-  heroImage.style.opacity = "0.2";
-  setTimeout(() => {
-    heroImage.src = heroImages[heroIndex];
-    heroImage.style.opacity = "1";
-  }, 100);
-  [...heroDots.children].forEach((d, n) => d.classList.toggle("active", n === heroIndex));
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
 }
-document.getElementById("heroPrev").onclick = () => showHero(heroIndex - 1);
-document.getElementById("heroNext").onclick = () => showHero(heroIndex + 1);
+
+function nextSlide() {
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000);
+
+showSlide(0);
 
 // Carrossel de resultados: botões + arrastar no mouse/touch.
 function makeDraggable(slider) {
