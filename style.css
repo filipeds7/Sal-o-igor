@@ -705,23 +705,32 @@ footer{
   position:fixed;
   right:20px;
   bottom:20px;
-  width:52px;
-  height:52px;
+  width:56px;
+  height:56px;
   border-radius:50%;
-  background:#111;
+  background:#111110;
   color:#b28a4c;
-  border:2px solid #b28a4c;
-  display:grid;
-  place-items:center;
-  font-size:22px;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
   box-shadow:0 7px 22px #0004;
   z-index:30;
-  transition:.2s ease
+  transition:.25s ease;
+}
+
+.whatsapp-float i{
+  color:#b28a4c;
 }
 
 .whatsapp-float:hover{
   background:#b28a4c;
-  color:#111
+  transform:scale(1.08);
+}
+
+.whatsapp-float:hover i{
+  color:#111110;
 }
 
 /* =========================
