@@ -107,12 +107,15 @@ button{
 }
 
 .menu-button{
-  display:none;
-  border:0;
-  background:none;
-  color:#fff;
-  font-size:25px
-}
+.menu-button{
+  display:block;
+  margin-left:auto;
+  margin-right:0;
+  padding:0;
+  width:35px;
+  text-align:right;
+  flex-shrink:0;
+  }
 
 .mobile-nav{
   display:none
