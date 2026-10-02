@@ -111,13 +111,9 @@
         <img src="assets/hero.jpg" alt="Resultado de cabelo">
       </div>
 
-      <button class="hero-control left">‹</button>
-      <button class="hero-control right">›</button>
+      <!-- BOTÕES LATERAIS DO HERO REMOVIDOS -->
 
-      <div class="hero-dots">
-        <button class="active"></button>
-        <button></button>
-      </div>
+      <!-- INDICADORES DO HERO REMOVIDOS -->
 
     </section>
 
@@ -135,9 +131,17 @@
           <h2>BELEZA EM CADA DETALHE</h2>
         </div>
 
+        <!-- CONTROLES DO CARROSSEL -->
         <div class="round-controls">
-          <button>‹</button>
-          <button>›</button>
+
+          <button id="prevResults" type="button">
+            ‹
+          </button>
+
+          <button id="nextResults" type="button">
+            ›
+          </button>
+
         </div>
 
       </div>
@@ -145,7 +149,8 @@
 
       <div class="results-viewport">
 
-        <div class="results-track">
+        <!-- ID USADO PELO SCRIPT.JS -->
+        <div class="results-track" id="resultsTrack">
 
           <article class="result-card">
             <img src="assets/mechas.jpg" alt="Mechas">
@@ -209,259 +214,4 @@
 
           <div>
             <b>♧</b>
-            <span>Profissionais<br>especializados</span>
-          </div>
-
-          <div>
-            <b>♧</b>
-            <span>Produtos<br>de qualidade</span>
-          </div>
-
-          <div>
-            <b>♡</b>
-            <span>Atendimento<br>personalizado</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="quote">
-
-        <div>
-          Sua beleza<br>
-          é a nossa<br>
-          inspiração.
-        </div>
-
-        <small>♡</small>
-
-      </div>
-
-
-      <div class="about-image">
-        <img src="assets/sobre.jpg" alt="Salão de beleza">
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         AVALIAÇÕES
-    ========================== -->
-
-    <section class="reviews" id="avaliacoes">
-
-      <div class="reviews-intro">
-
-        <span>AVALIAÇÕES</span>
-
-        <h2>
-          O que nossos<br>
-          clientes dizem
-        </h2>
-
-        <div class="rating">
-          <span class="google">G</span>
-          <strong>4,9</strong>
-          <i>★★★★★</i>
-          <small>(127 avaliações)</small>
-        </div>
-
-        <a
-          class="dark-outline"
-          href="https://www.google.com/search?q=Igor+Severo+Concept"
-          target="_blank"
-        >
-          VER TODAS AS AVALIAÇÕES NO GOOGLE →
-        </a>
-
-      </div>
-
-
-      <div class="review-slider">
-
-        <article class="review-card">
-
-          <header>
-            <span>J</span>
-
-            <div>
-              <b>Juliana Souza</b>
-              <small>há 2 semanas</small>
-            </div>
-          </header>
-
-          <i>★★★★★</i>
-
-          <p>
-            Atendimento incrível! Profissionais super atenciosos
-            e o resultado ficou perfeito. Super recomendo!
-          </p>
-
-          <em>G</em>
-
-        </article>
-
-
-        <article class="review-card">
-
-          <header>
-            <span>M</span>
-
-            <div>
-              <b>Mariana Silva</b>
-              <small>há 1 mês</small>
-            </div>
-          </header>
-
-          <i>★★★★★</i>
-
-          <p>
-            Amei o atendimento e o resultado. Tudo feito
-            com muito cuidado e profissionalismo.
-          </p>
-
-          <em>G</em>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         LOCALIZAÇÃO
-    ========================== -->
-
-    <section class="location" id="localizacao">
-
-      <div class="location-copy">
-
-        <span>NOSSA LOCALIZAÇÃO</span>
-
-        <h2>Venha nos visitar</h2>
-
-        <p>
-          📍 Rua General Abreu, 271<br>
-          Cidade Nova
-        </p>
-
-        <a
-          class="light-outline"
-          href="https://www.google.com/maps/search/?api=1&query=Igor+Severo+Concept"
-          target="_blank"
-        >
-          + VER NO GOOGLE MAPS →
-        </a>
-
-      </div>
-
-
-      <div class="map">
-
-        <iframe
-          src="https://www.google.com/maps?q=Igor+Severo+Concept&output=embed"
-          loading="lazy"
-          allowfullscreen
-        ></iframe>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         AGENDAMENTO
-    ========================== -->
-
-    <section class="booking" id="agendamento">
-
-      <div>
-
-        <span>AGENDAMENTO</span>
-
-        <h2>Seu momento começa aqui.</h2>
-
-        <p>
-          Entre em contato conosco e agende seu horário.
-        </p>
-
-      </div>
-
-
-      <!-- BOTÃO DE AGENDAMENTO -->
-      <a
-        class="gold-btn"
-        href="https://wa.me/5553984188072?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Igor%20Severo%20Concept%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-        target="_blank"
-      >
-        AGENDAR HORÁRIO <b>→</b>
-      </a>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       RODAPÉ
-  ========================== -->
-
-  <footer>
-
-    <div class="footer-logo">
-      <img src="assets/logo-header.png" alt="Igor Severo Concept">
-    </div>
-
-    <div>
-      <i class="fa-solid fa-location-dot"></i>
-      <span>
-        Rua General Abreu, 271<br>
-        Cidade Nova
-      </span>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-instagram"></i>
-      <span>
-        Siga-nos<br>
-        no Instagram
-      </span>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>
-        Fale conosco<br>
-        pelo WhatsApp
-      </span>
-    </div>
-
-    <p>
-      Sua beleza é a nossa inspiração.
-    </p>
-
-  </footer>
-
-
-  <!-- =========================
-       WHATSAPP FLUTUANTE
-  ========================== -->
-
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/5553984188072?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Igor%20Severo%20Concept%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-    target="_blank"
-    aria-label="Falar pelo WhatsApp"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-
-  <script src="script.js"></script>
-
-</body>
-              </html>
+            <span>Profissionais<br>especial
