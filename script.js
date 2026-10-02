@@ -1,66 +1,114 @@
-// Carrossel principal
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.hero-dot');
+// =========================
+// CARROSSEL DE RESULTADOS
+// =========================
 
-let currentSlide = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
-
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-}
-
-function nextSlide() {
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
-}
-
-setInterval(nextSlide, 5000);
-
-showSlide(0);
-
-// Carrossel de resultados: botões + arrastar no mouse/touch.
-function makeDraggable(slider) {
-  let down = false, startX = 0, startScroll = 0;
-  slider.addEventListener("pointerdown", e => {
-    down = true;
-    slider.classList.add("dragging");
-    startX = e.clientX;
-    startScroll = slider.scrollLeft;
-    slider.setPointerCapture(e.pointerId);
-  });
-  slider.addEventListener("pointermove", e => {
-    if (!down) return;
-    slider.scrollLeft = startScroll - (e.clientX - startX);
-  });
-  const stop = () => { down = false; slider.classList.remove("dragging"); };
-  slider.addEventListener("pointerup", stop);
-  slider.addEventListener("pointercancel", stop);
-  slider.addEventListener("lostpointercapture", stop);
-}
 const resultsTrack = document.getElementById("resultsTrack");
-makeDraggable(resultsTrack);
+const prevResults = document.getElementById("prevResults");
+const nextResults = document.getElementById("nextResults");
 
-document.getElementById("prevResults").onclick = () => resultsTrack.scrollBy({left:-250, behavior:"smooth"});
-document.getElementById("nextResults").onclick = () => resultsTrack.scrollBy({left:250, behavior:"smooth"});
+if (resultsTrack && prevResults && nextResults) {
 
-// Avaliações também podem ser arrastadas no celular.
-makeDraggable(document.getElementById("reviewSlider"));
+    prevResults.addEventListener("click", () => {
+        resultsTrack.scrollBy({
+            left: -280,
+            behavior: "smooth"
+        });
+    });
 
-// Menu mobile
+    nextResults.addEventListener("click", () => {
+        resultsTrack.scrollBy({
+            left: 280,
+            behavior: "smooth"
+        });
+    });
+
+    // Arrastar com mouse ou dedo
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    resultsTrack.addEventListener("pointerdown", (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startScroll = resultsTrack.scrollLeft;
+
+        resultsTrack.classList.add("dragging");
+        resultsTrack.setPointerCapture(e.pointerId);
+    });
+
+    resultsTrack.addEventListener("pointermove", (e) => {
+        if (!isDragging) return;
+
+        const distance = e.clientX - startX;
+
+        resultsTrack.scrollLeft = startScroll - distance;
+    });
+
+    const stopDragging = () => {
+        isDragging = false;
+        resultsTrack.classList.remove("dragging");
+    };
+
+    resultsTrack.addEventListener("pointerup", stopDragging);
+    resultsTrack.addEventListener("pointercancel", stopDragging);
+}
+
+
+// =========================
+// AVALIAÇÕES
+// =========================
+
+const reviewSlider = document.getElementById("reviewSlider");
+
+if (reviewSlider) {
+
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    reviewSlider.addEventListener("pointerdown", (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startScroll = reviewSlider.scrollLeft;
+
+        reviewSlider.classList.add("dragging");
+        reviewSlider.setPointerCapture(e.pointerId);
+    });
+
+    reviewSlider.addEventListener("pointermove", (e) => {
+        if (!isDragging) return;
+
+        const distance = e.clientX - startX;
+
+        reviewSlider.scrollLeft = startScroll - distance;
+    });
+
+    const stopReviewDragging = () => {
+        isDragging = false;
+        reviewSlider.classList.remove("dragging");
+    };
+
+    reviewSlider.addEventListener("pointerup", stopReviewDragging);
+    reviewSlider.addEventListener("pointercancel", stopReviewDragging);
+}
+
+
+// =========================
+// MENU MOBILE
+// =========================
+
 const menuButton = document.querySelector(".menu-button");
 const mobileNav = document.querySelector(".mobile-nav");
-menuButton.addEventListener("click", () => mobileNav.classList.toggle("open"));
-document.querySelectorAll(".mobile-nav a").forEach(a => a.addEventListener("click", () => mobileNav.classList.remove("open")));
 
-// Auto-play discreto no hero
-setInterval(() => showHero(heroIndex + 1), 6500);
+if (menuButton && mobileNav) {
+
+    menuButton.addEventListener("click", () => {
+        mobileNav.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".mobile-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileNav.classList.remove("open");
+        });
+    });
+    }
