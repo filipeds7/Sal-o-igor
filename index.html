@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Igor Severo Concept • Salão de Beleza">
+  <title>Igor Severo Concept • Salão de Beleza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="header-logo" href="#inicio"><img src="assets/logo-header.png" alt="Igor Severo Concept"></a>
+  <nav class="desktop-nav">
+    <a class="active" href="#inicio">INÍCIO</a>
+    <a href="#resultados">SERVIÇOS</a>
+    <a href="#avaliacoes">AVALIAÇÕES</a>
+    <a href="#localizacao">LOCALIZAÇÃO</a>
+  </nav>
+  <a class="schedule-button" href="#agendamento">◷ &nbsp; AGENDAR HORÁRIO</a>
+  <button class="menu-button" aria-label="Abrir menu">☰</button>
+</header>
+
+<div class="mobile-nav">
+  <a href="#inicio">INÍCIO</a>
+  <a href="#resultados">SERVIÇOS</a>
+  <a href="#avaliacoes">AVALIAÇÕES</a>
+  <a href="#localizacao">LOCALIZAÇÃO</a>
+</div>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-copy">
+      <img class="hero-logo" src="assets/logo-hero.png" alt="Igor Severo Concept">
+      <h1>Realce o que te faz única.</h1>
+      <p>Mais do que beleza, aqui é sobre autoestima, confiança e bem-estar. Cuidamos de cada detalhe para que você se sinta ainda mais você.</p>
+      <a class="gold-btn" href="#agendamento">AGENDAR HORÁRIO <b>→</b></a>
+    </div>
+
+    <div class="hero-media">
+      <img id="heroImage" src="assets/hero.jpg" alt="Resultado de beleza">
+    </div>
+
+    <button class="hero-control left" id="heroPrev" aria-label="Foto anterior">‹</button>
+    <button class="hero-control right" id="heroNext" aria-label="Próxima foto">›</button>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <section class="results" id="resultados">
+    <div class="section-title-row">
+      <div>
+        <span>RESULTADOS REAIS</span>
+        <h2>BELEZA EM CADA DETALHE</h2>
+      </div>
+      <div class="round-controls">
+        <button id="prevResults" aria-label="Anterior">‹</button>
+        <button id="nextResults" aria-label="Próximo">›</button>
+      </div>
+    </div>
+
+    <div class="results-viewport">
+      <div class="results-track" id="resultsTrack">
+        <article class="result-card"><img src="assets/mechas.jpg" alt="Mechas e coloração"><strong>MECHAS E COLORAÇÃO</strong></article>
+        <article class="result-card"><img src="assets/manicure.jpg" alt="Manicure"><strong>MANICURE</strong></article>
+        <article class="result-card"><img src="assets/penteados.jpg" alt="Penteados"><strong>PENTEADOS</strong></article>
+        <article class="result-card"><img src="assets/escova.jpg" alt="Escova progressiva"><strong>ESCOVA PROGRESSIVA</strong></article>
+        <article class="result-card"><img src="assets/sobrancelhas.jpg" alt="Sobrancelhas"><strong>SOBRANCELHAS</strong></article>
+      </div>
+    </div>
+    <p class="drag-hint">← arraste para ver mais →</p>
+  </section>
+
+  <section class="about">
+    <div class="about-copy">
+      <span>SOBRE NÓS</span>
+      <h2>Cuidado, beleza<br>e autoestima.</h2>
+      <p>No Igor Severo Concept, cada cliente é única. Nosso objetivo é realçar a sua beleza natural, com um atendimento personalizado, produtos de alta qualidade e profissionais experientes.</p>
+      <div class="benefits">
+        <div><b>♧</b><span>Profissionais<br>especializados</span></div>
+        <div><b>♧</b><span>Produtos<br>de qualidade</span></div>
+        <div><b>♡</b><span>Atendimento<br>personalizado</span></div>
+      </div>
+    </div>
+    <div class="quote">
+      <div>Sua beleza<br>é a nossa<br>inspiração.</div>
+      <small>──── ♡ ────</small>
+    </div>
+    <div class="about-image"><img src="assets/sobre.jpg" alt="Ambiente do salão"></div>
+  </section>
+
+  <section class="reviews" id="avaliacoes">
+    <div class="reviews-intro">
+      <span>AVALIAÇÕES</span>
+      <h2>O que nossos<br>clientes dizem</h2>
+      <div class="rating"><b class="google">G</b><strong>4,9</strong><i>★★★★★</i><small>(127 avaliações)</small></div>
+      <a class="dark-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Igor+Severo+Concept+Sal%C3%A3o+de+Beleza+Rua+General+Abreu+271">G &nbsp; VER TODAS AS AVALIAÇÕES NO GOOGLE <b>→</b></a>
+    </div>
+
+    <div class="review-slider" id="reviewSlider">
+      <article class="review-card">
+        <header><span>J</span><div><b>Juliana Souza</b><small>Há 2 semanas</small></div></header>
+        <i>★★★★★</i>
+        <p>“Atendimento incrível! Profissionais super atenciosos e o resultado ficou perfeito. Super recomendo!”</p>
+        <em>G</em>
+      </article>
+      <article class="review-card">
+        <header><span>R</span><div><b>Rafael Oliveira</b><small>Há 1 mês</small></div></header>
+        <i>★★★★★</i>
+        <p>“Ambiente agradável, equipe excelente e um resultado incrível.”</p>
+        <em>G</em>
+      </article>
+      <article class="review-card">
+        <header><span>C</span><div><b>Camila Santos</b><small>Há 1 mês</small></div></header>
+        <i>★★★★★</i>
+        <p>“Sempre saio daqui me sentindo ainda mais linda! O Igor Severo Concept é incrível!”</p>
+        <em>G</em>
+      </article>
+    </div>
+  </section>
+
+  <section class="location" id="localizacao">
+    <div class="location-copy">
+      <span>⌖ &nbsp; NOSSA LOCALIZAÇÃO</span>
+      <h2>Venha nos visitar</h2>
+      <p>📍 &nbsp; Rua General Abreu, 271<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cidade Nova</p>
+      <a class="light-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Igor+Severo+Concept+Sal%C3%A3o+de+Beleza+Rua+General+Abreu+271">⌖ &nbsp; VER NO GOOGLE MAPS <b>→</b></a>
+    </div>
+    <div class="map">
+      <iframe title="Localização no Google Maps" src="https://www.google.com/maps?q=Igor%20Severo%20Concept%20Sal%C3%A3o%20de%20Beleza%2C%20Rua%20General%20Abreu%2C%20271&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="booking" id="agendamento">
+    <div><span>AGENDAMENTO</span><h2>Seu momento começa aqui.</h2><p>Entre em contato pelo WhatsApp e agende seu horário.</p></div>
+    <a class="gold-btn" target="_blank" rel="noopener" href="https://wa.me/5553984188072?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Igor%20Severo%20Concept%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.">WHATSAPP →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo"><img src="assets/logo-header.png" alt="Igor Severo Concept"></div>
+  <div>⌖ <span>Rua General Abreu, 271<br>Cidade Nova</span></div>
+  <div>◉ <span>(53) 98418-8072<br>WhatsApp</span></div>
+  <div>◎ <span>@isevero.concept<br>Instagram</span></div>
+  <p>Beleza é se sentir bem.<br>──── ♡</p>
+</footer>
+
+<a class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"
+   href="https://wa.me/5553984188072?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Igor%20Severo%20Concept%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.">◉</a>
+
+<script src="script.js"></script>
+</body>
+</html>
